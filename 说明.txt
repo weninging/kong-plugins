@@ -1,0 +1,17 @@
+docker 启动命令
+
+docker run -d --name mykong \
+     --network=mynetwork \
+     -v /Users/wening/WorkSpace/wening/kong/kong.conf:/etc/kong/kong.conf \
+     -p 8000:8000 \
+     -p 8443:8443 \
+     -p 127.0.0.1:8001:8001 \
+     -p 127.0.0.1:8444:8444 \
+     mykong:3.0
+
+
+
+kong.conf 配置说明 golang开发插件
+
+     plugins = 新开发的插件名称
+     go_plugins_dir = 新开发的插件文件地址
